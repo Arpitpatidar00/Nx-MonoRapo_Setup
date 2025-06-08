@@ -1,0 +1,20 @@
+{
+    "extends": [
+        "plugin:@nx/typescript",
+        "plugin:@nx/react"
+    ],
+    "ignorePatterns": [
+        "!**/*"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "*.ts",
+                "*.tsx",
+                "*.js",
+                "*.jsx"
+            ],
+            "rules": {}
+        }
+    ]
+}
