@@ -1,10 +1,26 @@
 {
   "name": "web",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "web/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/web/src",
   "projectType": "application",
+ "targets": {
+  "build": {
+    "executor": "@nx/vite:build",
+    "outputs": ["{workspaceRoot}/dist/apps/web"],
+    "options": {
+      "outputPath": "dist/apps/web",
+      "configFile": "apps/web/vite.config.ts"
+    }
+  },
+  "serve": {
+    "executor": "@nx/vite:dev-server",
+    "options": {
+      "buildTarget": "web:build",
+      "configFile": "apps/web/vite.config.ts"
+    }
+  }
+}
+,
   "tags": [],
-  "// targets": "to see all targets run: nx show project web --web",
-  "targets": {},
   "outputs": ["{workspaceRoot}/dist/apps/web"]
 }

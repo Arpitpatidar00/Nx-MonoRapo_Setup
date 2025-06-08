@@ -17,5 +17,10 @@
   "exclude": [
     "**/*.spec.ts",
     "**/*.test.ts"
+  ],
+  "references": [
+    {
+      "path": "../types/tsconfig.json"
+    }
   ]
 }

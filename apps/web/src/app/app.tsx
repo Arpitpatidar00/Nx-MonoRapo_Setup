@@ -5,10 +5,14 @@ import { exampleService } from '@accent-tech/services';
 
 export function App() {
   const [response, setResponse] = useState<ApiResponse | null>(null);
-  console.log('response: ', response);
 
   useEffect(() => {
-    exampleService();
+    const fetchData = async () => {
+      const result = await exampleService();
+      setResponse(result);
+    };
+
+    fetchData();
   }, []);
 
   const raw = 'hello from utils!';
