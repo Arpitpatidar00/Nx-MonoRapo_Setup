@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { exampleService } from '@accent-tech/services';
 import { ApiResponse } from '@accent-tech/types';
 import { capitalize } from '@accent-tech/utils';
-import { exampleService } from '@accent-tech/services';
+import { useEffect, useState } from 'react';
 
 export function App() {
   const [response, setResponse] = useState<ApiResponse | null>(null);

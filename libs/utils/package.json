@@ -1,12 +1,12 @@
 {
-    "name": "@accent-tech/utils",
-    "version": "0.0.1",
-    "private": true,
-    "type": "commonjs",
-    "main": "./src/index.js",
-    "types": "./src/index.d.ts",
-    "dependencies": {
-      "@accent-tech/types": "0.0.1",
-      "tslib": "^2.3.0"
-    }
+  "name": "@accent-tech/utils",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "dependencies": {
+    "@accent-tech/types": "0.0.1",
+    "tslib": "^2.3.0"
   }
+}

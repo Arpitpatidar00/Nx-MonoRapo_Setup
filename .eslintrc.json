@@ -1,20 +1,86 @@
 {
-    "extends": [
-        "plugin:@nx/typescript",
-        "plugin:@nx/react"
-    ],
-    "ignorePatterns": [
-        "!**/*"
-    ],
-    "overrides": [
-        {
-            "files": [
-                "*.ts",
-                "*.tsx",
-                "*.js",
-                "*.jsx"
+  "root": true,
+  "extends": [
+    "plugin:@nx/typescript",
+    "plugin:@nx/react",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "jsx-a11y",
+    "import"
+  ],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "parserOptions": {
+        "project": ["tsconfig.*?.json"]
+      },
+      "rules": {
+        // ✅ Best Practices
+        "eqeqeq": ["error", "always"],
+        "no-console": [
+          "warn",
+          {
+            "allow": ["warn", "error"]
+          }
+        ],
+        "no-debugger": "error",
+        "curly": ["error", "all"],
+        "no-duplicate-imports": "error",
+        "prefer-const": "error",
+        // ✅ TypeScript
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/consistent-type-imports": "error",
+        // ✅ React
+        "react/react-in-jsx-scope": "off", // Not needed in React 17+
+        "react/prop-types": "off", // Not needed with TypeScript
+        // ✅ Import Sorting
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "index"
             ],
-            "rules": {}
-        }
-    ]
+            "newlines-between": "always"
+          }
+        ],
+        // ✅ Hooks
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": ["tsconfig.base.json"]
+      }
+    }
+  }
 }

@@ -6,18 +6,11 @@
     "rootDir": "./src",
     "outDir": "../../dist/out-tsc/libs/services",
     "module": "commonjs",
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "esModuleInterop": true
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "**/*.spec.ts",
-    "**/*.test.ts"
-  ],
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"],
   "references": [
     {
       "path": "../types/tsconfig.json"
