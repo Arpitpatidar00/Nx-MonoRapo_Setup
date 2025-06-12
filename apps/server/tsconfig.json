@@ -3,7 +3,12 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "outDir": "../../dist/out-tsc",
-    "types": ["node"]
+    "types": [
+      "node"
+    ],
+    "composite": true,
+    "declaration": true, // ✅ Required for "composite"
+    "declarationMap": true // (Optional, for debugging support)
   },
   "files": [],
   "include": [],

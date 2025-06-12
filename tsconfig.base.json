@@ -7,18 +7,53 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@accent-tech/types": ["libs/types/src/index.ts"],
-      "@accent-tech/utils": ["libs/utils/src/index.ts"],
-      "@accent-tech/services": ["libs/services/src/index.ts"]
+      "@server/*": [
+        "apps/server/src/*"
+      ],
+      "@server/api/*": [
+        "apps/server/src/api/*"
+      ],
+      "@server/middlewares/*": [
+        "apps/server/src/api/middleware/*"
+      ],
+      "@server/routes/*": [
+        "apps/server/src/api/routes/*"
+      ],
+      "@server/utils/*": [
+        "apps/server/src/utils/*"
+      ],
+      "@server/services/*": [
+        "apps/server/src/api/services/*"
+      ],
+      "@web/*": [
+        "apps/web/src/*"
+      ],
+      "@accent-tech/utils": [
+        "libs/utils/src/index.ts"
+      ],
+      "@accent-tech/services": [
+        "libs/services/src/index.ts"
+      ],
+      "@accent-tech/types": [
+        "libs/types/src/index.ts"
+      ],
     }
   },
-  "exclude": ["node_modules", "tmp", "dist"]
+  "exclude": [
+    "node_modules",
+    "tmp",
+    "dist"
+  ]
 }
