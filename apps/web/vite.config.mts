@@ -30,11 +30,14 @@ export default defineConfig(() => ({
     },
   },
   test: {
+    globals: true,
     coverage: {
-      provider: 'v8', // or 'c8'
+      provider: 'v8',
       reportsDirectory: './coverage',
-      reporter: ['text', 'lcov'], // optional
-      include: ['src/**/*.{ts,tsx}'], // adjust as needed
+      reporter: ['text', 'lcov'],
+      all: true,
+      include: ['apps/**/src/**/*.{ts,tsx}', 'libs/**/src/**/*.{ts,tsx}'],
+      exclude: ['**/node_modules/**', '**/dist/**'],
     },
   },
 }));
