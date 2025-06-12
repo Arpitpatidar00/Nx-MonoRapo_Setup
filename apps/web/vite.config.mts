@@ -29,4 +29,12 @@ export default defineConfig(() => ({
       transformMixedEsModules: true,
     },
   },
+  test: {
+    coverage: {
+      provider: 'v8', // or 'c8'
+      reportsDirectory: './coverage',
+      reporter: ['text', 'lcov'], // optional
+      include: ['src/**/*.{ts,tsx}'], // adjust as needed
+    },
+  },
 }));
